@@ -6,10 +6,10 @@ profiles:
   - name: local
     build:
       googleCloudBuild:
-        projectId: accelerator-services
+        projectId: accelerator-shared-0c2a
         gradleImage: gradle:8.2.1-jdk17-alpine
       artifacts:
-        - image: us-east4-docker.pkg.dev/accelerator-services/application/accelerator-audit-service
+        - image: us-east4-docker.pkg.dev/accelerator-shared-0c2a/application/accelerator-audit-service
           jib:
             type: gradle
             project: service
@@ -22,8 +22,8 @@ profiles:
           chartPath: helm/audit-service
           # Ref: https://skaffold.dev/docs/deployers/helm/#image-configuration
           setValueTemplates:
-            image.repository: "{{.IMAGE_REPO_us_east4_docker_pkg_dev_accelerator_services_application_accelerator_audit_service}}"
-            image.tag: "{{.IMAGE_TAG_us_east4_docker_pkg_dev_accelerator_services_application_accelerator_audit_service}}@{{.IMAGE_DIGEST_us_east4_docker_pkg_dev_accelerator_services_application_accelerator_audit_service}}"
+            image.repository: "{{.IMAGE_REPO_us_east4_docker_pkg_dev_accelerator_shared_0c2a_application_accelerator_audit_service}}"
+            image.tag: "{{.IMAGE_TAG_us_east4_docker_pkg_dev_accelerator_shared_0c2a_application_accelerator_audit_service}}@{{.IMAGE_DIGEST_us_east4_docker_pkg_dev_accelerator_shared_0c2a_application_accelerator_audit_service}}"
           setValues:
             environment: local
           valuesFiles:
@@ -76,10 +76,10 @@ profiles:
   - name: dev
     build:
       googleCloudBuild:
-        projectId: accelerator-services
+        projectId: accelerator-shared-0c2a
         gradleImage: gradle:8.2.1-jdk17-alpine
       artifacts:
-        - image: us-east4-docker.pkg.dev/accelerator-services/application/accelerator-audit-service
+        - image: us-east4-docker.pkg.dev/accelerator-shared-0c2a/application/accelerator-audit-service
           jib:
             type: gradle
             project: service
@@ -92,8 +92,8 @@ profiles:
           chartPath: helm/audit-service
           # Ref: https://skaffold.dev/docs/deployers/helm/#image-configuration
           setValueTemplates:
-            image.repository: "{{.IMAGE_REPO_us_east4_docker_pkg_dev_accelerator_services_application_accelerator_audit_service}}"
-            image.tag: "{{.IMAGE_TAG_us_east4_docker_pkg_dev_accelerator_services_application_accelerator_audit_service}}@{{.IMAGE_DIGEST_us_east4_docker_pkg_dev_accelerator_services_application_accelerator_audit_service}}"
+            image.repository: "{{.IMAGE_REPO_us_east4_docker_pkg_dev_accelerator_shared_0c2a_application_accelerator_audit_service}}"
+            image.tag: "{{.IMAGE_TAG_us_east4_docker_pkg_dev_accelerator_shared_0c2a_application_accelerator_audit_service}}@{{.IMAGE_DIGEST_us_east4_docker_pkg_dev_accelerator_shared_0c2a_application_accelerator_audit_service}}"
           setValues:
             environment: dev
           valuesFiles:
